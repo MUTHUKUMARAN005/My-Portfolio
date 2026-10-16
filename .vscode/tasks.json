@@ -1,0 +1,103 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check image tools",
+			"type": "shell",
+			"command": "where",
+			"args": [
+				"magick"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Python imaging",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-c",
+				"from PIL import Image; print('PIL available')"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Save transparent portrait",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require('fs');const raw=fs.readFileSync('C:/Users/USER/AppData/Local/Temp/1792134267098-copilot-tool-output-021906d15311438a90f9cb11a6db612a.txt','utf8');const uri=JSON.parse(raw.match(/data:image\\/webp;base64,[A-Za-z0-9+/=]+/s)[0].replace(/^Script ran on page and returned:\\s*```json\\s*/,''));fs.writeFileSync('src/assets/muthukumaran-portrait.webp',Buffer.from(uri.split(',')[1],'base64'));console.log('saved')"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Save transparent portrait file",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"save-portrait.cjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify portrait visibility build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check GitHub CLI",
+			"type": "shell",
+			"command": "gh",
+			"args": [
+				"auth",
+				"status"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Git status",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Initialize local repository",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"init",
+				"-b",
+				"main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Commit portfolio",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"."
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
